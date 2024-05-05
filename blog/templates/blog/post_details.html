@@ -1,10 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ post.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #343a40;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .post {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .post h1 {
+            margin-top: 0;
+        }
+        .post p {
+            margin-bottom: 20px;
+        }
+        .share-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .share-buttons a {
+            display: inline-block;
+            margin-right: 10px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .share-buttons a:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
+    <header>
+        <h1>{{ post.title }}</h1>
+    </header>
+    <nav>
+        <a href="">Home</a>
+        <a href="#">About</a>
+        <a href="{% url 'contact_us' %}">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="post">
+            <p>{{ post.content }}</p>
+            <div class="share-buttons">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
